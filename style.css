@@ -10,6 +10,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+label {
+    margin-bottom: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,10 +33,24 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.form-group {
+    position: relative;
+}
+
 .success {
     border: 2px solid var(--success);
 }
 
 .danger {
     border: 2px solid var(--danger);
+}
+
+.danger-message {
+    display: none;
+    color: var(--danger);
+    padding-top: 5px;
+}
+
+.danger-message.active {
+    display: block;
 }
