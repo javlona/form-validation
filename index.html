@@ -10,55 +10,34 @@
     <title>Form Validation</title>
 </head>
 <body>
-    <section>
-        <div class="container py-4">
-          <div class="row">
-            <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
-              <h3 class="text-center">Contact us</h3>
-              <form role="form" id="contact-form" method="post" autocomplete="off">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="input-group input-group-dynamic mb-4">
-                        <label class="form-label">First Name</label>
-                        <input class="form-control" aria-label="First Name..." type="text" >
-                      </div>
-                    </div>
-                    <div class="col-md-6 ps-2">
-                      <div class="input-group input-group-dynamic">
-                        <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mb-4">
-                    <div class="input-group input-group-dynamic">
-                      <label class="form-label">Email Address</label>
-                      <input type="email" class="form-control">
-                    </div>
-                  </div>
-                  <div class="input-group mb-4 input-group-static">
-                    <label>Your message</label>
-                    <textarea name="message" class="form-control" id="message" rows="4"></textarea>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-check form-switch mb-4 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked="">
-                        <label class="form-check-label ms-3 mb-0" for="flexSwitchCheckDefault">I agree to the <a href="javascript:;" class="text-dark"><u>Terms and Conditions</u></a>.</label>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <button type="submit" class="btn bg-gradient-dark w-100">Send Message</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+  <div class="container">
+    <div class="wrapper">
+      <h2 class="text-center mb-4">Form Validation</h2>
+      <form>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="First Name *" autocomplete="off">
         </div>
-      </section>
-      
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Last Name *" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email *" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password *" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="passwordConfirm">Confirm Password</label>
+          <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirm password *" autocomplete="off">
+        </div>
+        <button class="btn btn-primary mt-4">Register</button>
+      </form>
+    </div>
+  </div>
 
     <script src="app.js"></script>
 </body>
