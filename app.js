@@ -24,6 +24,11 @@ phone.addEventListener('blur', () => {
 
 })
 
+// validate password
+password.addEventListener('blur', () => {
+    
+})
+
 // show danger message 
 function showDanger(el) {
     el.classList.add('danger')
@@ -42,7 +47,6 @@ function formatPhoneNumber(phone) {
     var cleaned = ('' + phone).replace(/\D/g, '');
     var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
     if (match) {
-        phone = "";
         phone = '(' + match[1] + ') ' + match[2] + '-' + match[3];
     }
     return null;
