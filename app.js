@@ -3,6 +3,7 @@ const phone = document.querySelector('#phone')
 const email = document.querySelector('#email')
 const password = document.querySelector('#password')
 const passwordConfirmation = document.querySelector('#passwordConfirmation')
+const onlyNum = /^\d+$/
 
 userName.addEventListener('blur', () => {
     if(userName.value.length < 6) {
@@ -12,16 +13,16 @@ userName.addEventListener('blur', () => {
     }
 })
 
+// validate phone number
 phone.addEventListener('blur', () => {
-    if(phone.value.length < 10) {
+    if(phone.value.length < 10 || phone.value != onlyNum) {
         showDanger(phone)
     } else {
         showSuccess(phone)
-        formatPhoneNumber(phone.innerText)
+        formatPhoneNumber(phone.value)
     }
 
 })
-
 
 // show danger message 
 function showDanger(el) {
@@ -41,7 +42,8 @@ function formatPhoneNumber(phone) {
     var cleaned = ('' + phone).replace(/\D/g, '');
     var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
     if (match) {
-      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+        phone = "";
+        phone = '(' + match[1] + ') ' + match[2] + '-' + match[3];
     }
     return null;
 }
