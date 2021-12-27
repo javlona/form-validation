@@ -3,7 +3,10 @@ const phone = document.querySelector('#phone')
 const email = document.querySelector('#email')
 const password = document.querySelector('#password')
 const passwordConfirmation = document.querySelector('#passwordConfirmation')
+const form = document.querySelector('#form')
 const onlyNum = /^\d+$/
+
+//form.addeventListener('submit', (e) => e.preventDefault())
 
 userName.addEventListener('blur', () => {
     if(userName.value.length < 6) {
@@ -15,7 +18,7 @@ userName.addEventListener('blur', () => {
 
 // validate phone number
 phone.addEventListener('blur', () => {
-    if(phone.value.length < 10 || phone.value != onlyNum) {
+    if(phone.value.length < 10 ) {
         showDanger(phone)
     } else {
         showSuccess(phone)
@@ -25,9 +28,17 @@ phone.addEventListener('blur', () => {
 })
 
 // validate password
-password.addEventListener('blur', () => {
-    
+email.addEventListener('blur', () => {
+    const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+    if(emailCheck.test(email.value)) {
+        showSuccess(email)
+    } else {
+        showDanger(email)
+    }
 })
+
+
 
 // show danger message 
 function showDanger(el) {
