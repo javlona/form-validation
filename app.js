@@ -27,7 +27,7 @@ phone.addEventListener('blur', () => {
 
 })
 
-// validate password
+// validate email
 email.addEventListener('blur', () => {
     const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -38,6 +38,15 @@ email.addEventListener('blur', () => {
     }
 })
 
+// validate password
+passwordConfirmation.addEventListener('blur', () => {
+    if(password.value != passwordConfirmation.value){
+        showDanger(passwordConfirmation)
+    } else {
+        showSuccess(passwordConfirmation)
+        showSuccess(password)
+    }
+})
 
 
 // show danger message 
